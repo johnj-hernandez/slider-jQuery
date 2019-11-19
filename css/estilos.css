@@ -1,0 +1,133 @@
+/* Un pequeño reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* quitamos la decoracion de los items de las listas */
+ul,
+ol {
+  list-style: none;
+}
+/* se le agrega la fuente personalizada */
+body {
+  font-family: Open sans;
+}
+/* el contenedor del slider, le damos un  ancho para que no ocupe toda la pantalla y lo centramos horizontalmente,
+posicion relativa para luego poder posicionar por absoluta */
+.slideshow {
+  margin: 20px auto;
+  width: 80%;
+  height: 60vh;
+  position: relative;
+}
+
+/* ancho del 100% para el contenido de los slider */
+.slider li,
+ul {
+  width: 100%;
+  height: 100%;
+}
+/* Ocultamos cualquier desbordamiento en los items */
+.slider li {
+  overflow: hidden;
+}
+/* ancho de las imagenes 100% */
+.slider li img {
+  width: 100%;
+  height: 100%;
+}
+/* Asi mismo con el div interno  para que ocupe todo su contenedor y agregamos el formato para que todo este centrado
+y linea sobre linea, color blanco y por encima de la imagen*/
+.slider .caption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 15px 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+/* tamaño de h1 */
+.slider .caption h1 {
+  font-size: 50px;
+}
+
+/* formato a los parrafos */
+.slider .caption p {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+/* La paginacion tambien tendra posicionamiento absoluto */
+.pagination {
+  position: absolute;
+  top: 102%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* formato de los puntos de paginacion */
+.pagination li {
+  font-size: 20px;
+  margin: 2px 5px;
+  color: #858585;
+  cursor: pointer;
+}
+/* flechas */
+.left,
+.right {
+  position: absolute;
+  top: 0;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  color: #fff;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+/* Algo de Responsive */
+@media screen and (max-width: 600px) {
+  .slider .caption p {
+    display: none;
+  }
+
+  .slider .caption h1 {
+    font-size: 35px;
+  }
+
+  .left,
+  .right {
+    font-size: 30px;
+  }
+
+  .slider li img {
+    width: 600px;
+  }
+
+  .pagination {
+    display: none;
+  }
+}
